@@ -66,6 +66,7 @@ body {
   background-color: white;
   border-radius: 6px;
   width: 180px;
+  cursor: pointer;
 }
 .track_current_position_play {
   background-color: #34f6ff;
