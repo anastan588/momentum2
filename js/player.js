@@ -110,7 +110,7 @@ function play() {
       //console.log(nameOfItem[i].innerHTML === currentTrackName.innerHTML &&
       // buttonPlay.classList.contains("pause"));
       audio.play();
-      playImageItem[i].src = "/assets/svg/pause.svg";
+      playImageItem[i].src = "./assets/svg/pause.svg";
       nameOfItem[i].style.color = "#34f6ff";
       nameOfItem[i].style.fontStyle = "italic";
       function setTimeCurrentDuration() {
@@ -174,7 +174,7 @@ function play() {
           buttonPlay.classList.contains("pause")
       );
       audio.pause();
-      playImageItem[i].src = "/assets/svg/play.svg";
+      playImageItem[i].src = "./assets/svg/play.svg";
       nameOfItem[i].style.color = "#FFFFFF";
       nameOfItem[i].style.fontStyle = "normal";
     }
@@ -210,11 +210,11 @@ function currentTrackByList(event) {
       buttonPlay.classList.contains("pause") &&
       nameOfItem[i].innerHTML === track.innerHTML
     ) {
-      playImageItem[i].src = "/assets/svg/pause.svg";
+      playImageItem[i].src = "./assets/svg/pause.svg";
       nameOfItem[i].style.color = "#34f6ff";
       nameOfItem[i].style.fontStyle = "italic";
     } else {
-      playImageItem[i].src = "/assets/svg/play.svg";
+      playImageItem[i].src = "./assets/svg/play.svg";
       nameOfItem[i].style.color = "#FFFFFF";
       nameOfItem[i].style.fontStyle = "normal";
     }
@@ -303,15 +303,15 @@ function playNextTrack(event) {
         trackPlayLine.offsetWidth /
         durationDecodeToNumber(durationAll.innerHTML);
       //console.log(partOfSongLengh);
-      playImageItem[i + 1].src = "/assets/svg/pause.svg";
+      playImageItem[i + 1].src = "./assets/svg/pause.svg";
       nameOfItem[i + 1].style.color = "#34f6ff";
       nameOfItem[i + 1].style.fontStyle = "italic";
       if (i < nameOfItem.length - 1 && i >= 0) {
-        playImageItem[i].src = "/assets/svg/play.svg";
+        playImageItem[i].src = "./assets/svg/play.svg";
         nameOfItem[i].style.color = "#FFFFFF";
         nameOfItem[i].style.fontStyle = "normal";
       } else {
-        playImageItem[nameOfItem.length - 1].src = "/assets/svg/play.svg";
+        playImageItem[nameOfItem.length - 1].src = "./assets/svg/play.svg";
         nameOfItem[nameOfItem.length - 1].style.color = "#FFFFFF";
         nameOfItem[nameOfItem.length - 1].style.fontStyle = "normal";
       }
@@ -349,15 +349,15 @@ function playPrevTrack(event) {
       partOfSongLengh =
         trackPlayLine.offsetWidth /
         durationDecodeToNumber(durationAll.innerHTML);
-      playImageItem[i - 1].src = "/assets/svg/pause.svg";
+      playImageItem[i - 1].src = "./assets/svg/pause.svg";
       nameOfItem[i - 1].style.color = "#34f6ff";
       nameOfItem[i - 1].style.fontStyle = "italic";
       if (i <= nameOfItem.length - 1 && i > 0) {
-        playImageItem[i].src = "/assets/svg/play.svg";
+        playImageItem[i].src = "./assets/svg/play.svg";
         nameOfItem[i].style.color = "#FFFFFF";
         nameOfItem[i].style.fontStyle = "normal";
       } else {
-        playImageItem[0].src = "/assets/svg/play.svg";
+        playImageItem[0].src = "./assets/svg/play.svg";
         nameOfItem[0].style.color = "#FFFFFF";
         nameOfItem[0].style.fontStyle = "normal";
       }
@@ -375,9 +375,9 @@ function volumeChange() {
   //console.log(audio.volume);
   audio.volume = volumeRange.value;
   if (volumeRange.value === "0") {
-    volumeImage.src = "/assets/svg/mute.png";
+    volumeImage.src = "./assets/svg/mute.png";
   } else {
-    volumeImage.src = "/assets/svg/volume.png";
+    volumeImage.src = "./assets/svg/volume.png";
   }
   return volumeRange.value;
 }
@@ -401,13 +401,13 @@ function volumeImageChange() {
     volumeImage.classList.toggle("mute");
     //let volumeMemory2 = volumeMemory;
     if (volumeImage.classList.contains("mute")) {
-      volumeImage.src = "/assets/svg/mute.png";
+      volumeImage.src = "./assets/svg/mute.png";
       volumeRange.value = "0";
       audio.volume = volumeRange.value;
       console.log(volumeImage.src);
       console.log(audio.volume);
     } else {
-      volumeImage.src = "/assets/svg/volume.png";
+      volumeImage.src = "./assets/svg/volume.png";
       console.log(volumeMemory);
       volumeRange.value = volumeMemory;
       console.log(volumeRange.value);
