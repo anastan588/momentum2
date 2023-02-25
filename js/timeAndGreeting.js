@@ -35,7 +35,7 @@ let periodOfDays = [
 
 function showTime() {
   let newTime = new Date();
-  newTimeUpdate = newTime.toLocaleTimeString();
+  newTimeUpdate = newTime.toLocaleTimeString("en-GB");
   time.innerHTML = newTimeUpdate;
   function showDate() {
     let dayOfWeek = newTime.getDay();
