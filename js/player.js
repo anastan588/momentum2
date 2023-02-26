@@ -74,7 +74,7 @@ function durationDecodeToString(currentDuration) {
 function currentTrack() {
   //console.log(audio);
   audio.src = playList[0].src;
-  console.log(audio.src);
+  //console.log(audio.src);
 
   audio.ondurationchange = function (event) {
     //console.log(event);
@@ -382,8 +382,8 @@ function volumeChange() {
   return volumeRange.value;
 }
 
-console.log(volumeRange.value);
-console.log(typeof volumeRange);
+//console.log(volumeRange.value);
+//console.log(typeof volumeRange);
 var objectforVolume = {};
 var volumeMemory;
 

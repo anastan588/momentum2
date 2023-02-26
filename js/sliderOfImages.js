@@ -1,16 +1,43 @@
+import { greeting } from './timeAndGreeting.js';
+import { periodOfDaysEn } from './translate.js';
+import { periodOfDaysRu } from './translate.js';
+import { currentLanguage } from './timeAndGreeting.js';
+//console.log(currentLanguage);
+//console.log(periodOfDaysRu);
+
 const leftArrow = document.querySelector(".slide-prev");
 const rightArrow = document.querySelector(".slide-next");
 const body = document.querySelector("body");
+let periodOfdays = "";
 
-
-let greetingText = greeting.innerHTML;
+function getPeriodOfDay() {
+let  greetingText = greeting.innerHTML;
 let greetingTextArray = greetingText.split(" ");
 let periodOfdayAllString = greetingTextArray[1];
-let periodOfday = periodOfdayAllString.slice(0, [length - 1]);
+//console.log(periodOfdayAllString);
+let periodOfdayString = periodOfdayAllString.slice(0, [length - 1]);
+  if (currentLanguage === "en") {
+  periodOfdays = periodOfdayString;
+} else if (currentLanguage === "ru") {
+  for (let i=0; i<periodOfDaysRu.length; i++) {
+    if (periodOfdayString === periodOfDaysRu[i]) {
+      periodOfdays = periodOfDaysEn[i];
+    }
+  }
+}
+//console.log(periodOfdays)
+return periodOfdays;
+}
+
+getPeriodOfDay();
+
+//console.log(periodOfdays);
+
 let randomNumber = Math.round(Math.random() * 20);
 if (randomNumber === 0 ) {
     randomNumber = 1;
 }
+
 
 function setBg() {
   const img = new Image();
@@ -20,7 +47,7 @@ function setBg() {
   } else {
     randomNumberString = randomNumber;
   }
-  img.src = `https://raw.githubusercontent.com/anastan588/momentum-images/main/images/${periodOfday}/${randomNumberString}.webp`;
+  img.src = `https://raw.githubusercontent.com/anastan588/momentum-images/main/images/${periodOfdays}/${randomNumberString}.webp`;
   img.onload = () => {      
     body.style.backgroundImage = `url("${img.src}")`;
   }; 
@@ -40,7 +67,7 @@ function getSlideNext() {
   } else {
     randomNumberString = randomNumber;
   }
-  img.src = `https://raw.githubusercontent.com/anastan588/momentum-images/main/images/${periodOfday}/${randomNumberString}.webp`;
+  img.src = `https://raw.githubusercontent.com/anastan588/momentum-images/main/images/${periodOfdays}/${randomNumberString}.webp`;
   img.onload = () => {      
     body.style.backgroundImage = `url("${img.src}")`;
   }; 
@@ -60,7 +87,7 @@ function getSlidePrev() {
   } else {
     randomNumberString = randomNumber;
   }
-  img.src = `https://raw.githubusercontent.com/anastan588/momentum-images/main/images/${periodOfday}/${randomNumberString}.webp`;
+  img.src = `https://raw.githubusercontent.com/anastan588/momentum-images/main/images/${periodOfdays}/${randomNumberString}.webp`;
   img.onload = () => {      
     body.style.backgroundImage = `url("${img.src}")`;
   }; 
