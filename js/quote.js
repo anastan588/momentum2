@@ -1,5 +1,7 @@
 
-import { currentLanguage, getCurrentLanguage,languageForm} from "./translate.js";
+import {currentLanguage, getCurrentLanguage,languageForm} from "./translate.js";
+
+
 const quote = document.querySelector(".quote");
 const author = document.querySelector(".author");
 const changeQuote = document.querySelector(".change-quote");
@@ -11,12 +13,15 @@ async function getQuotes() {
  // console.log(currentLanguage);
   var quotes;
   if(currentLanguage === "en") {
-    quotes = './js/quotesEng.json';
+    quotes = '/js/quotesEng.json';
+    console.log(quotes);
   } else if(currentLanguage === "ru") {
-    quotes ="./js/quotesRu.json";
+    quotes = "/js/quotesRu.json";
+    console.log(quotes);
   }
   const res = await fetch(quotes);
   const data = await res.json();
+  console.log(data);
  
   let quoteNumber =Math.floor(Math.random()*data.length);
   
