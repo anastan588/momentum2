@@ -1,5 +1,5 @@
 
-import { currentLanguage, getCurrentLanguage,languageForm} from "./js/translate.js";
+import { currentLanguage, getCurrentLanguage,languageForm} from "./translate.js";
 const quote = document.querySelector(".quote");
 const author = document.querySelector(".author");
 const changeQuote = document.querySelector(".change-quote");

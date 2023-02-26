@@ -2,7 +2,7 @@ import {
   currentLanguage,
   getCurrentLanguage,
   languageForm,
-} from "./js/translate.js";
+} from "./translate.js";
 
 const weatherIcon = document.querySelector(".weather-icon");
 const temperature = document.querySelector(".temperature");

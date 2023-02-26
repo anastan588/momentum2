@@ -1,7 +1,7 @@
-import { greeting } from "./js/timeAndGreeting.js";
-import { periodOfDaysEn } from "./js/translate.js";
-import { periodOfDaysRu } from "./js/translate.js";
-import { currentLanguage } from "./js/timeAndGreeting.js";
+import { greeting } from "./timeAndGreeting.js";
+import { periodOfDaysEn } from "./translate.js";
+import { periodOfDaysRu } from "./translate.js";
+import { currentLanguage } from "./timeAndGreeting.js";
 //console.log(currentLanguage);
 //console.log(periodOfDaysRu);
 

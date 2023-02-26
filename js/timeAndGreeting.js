@@ -8,7 +8,7 @@ import {
   periodOfDaysEn,
   periodOfDaysRu,
   endsOfGood,
-} from "./js/translate.js";
+} from "./translate.js";
 
 //console.log(currentLanguage);
 
