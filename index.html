@@ -33,7 +33,14 @@
                 src="assets/svg/volume.png"
                 alt="volume"
               />
-              <input class="volume_strenght" type="range" min="0" max="1" value="0.5" step="0.01"/>
+              <input
+                class="volume_strenght"
+                type="range"
+                min="0"
+                max="1"
+                value="0.5"
+                step="0.01"
+              />
             </div>
           </div>
         </div>
@@ -79,18 +86,126 @@
         <span class="greeting"></span>
         <input type="text" class="name" />
       </div>
+      <div class="quote-container">
+        <button class="change-quote"></button>
+        <div>
+          <div class="quote"></div>
+          <div class="author"></div>
+        </div>
+      </div>
     </main>
     <footer class="footer">
-      <button class="change-quote"></button>
-      <div>
-        <div class="quote"></div>
-        <div class="author"></div>
+      <div class="tool_container">
+        <div class="tool_line">
+          <p class="tool_name language">Language:</p>
+          <form class="tool_form language_form">
+            <input id="en" type="radio" name="language" value="en" checked />
+            <label for="en" class="english">English</label>
+            <input id="ru" type="radio" name="language" value="ru" />
+            <label for="ru" class="russian">Russian</label>
+          </form>
+        </div>
+        <div class="tool_line">
+          <p class="tool_name photo_source">Photo source:</p>
+          <form class="tool_form">
+            <input
+              id="github"
+              type="radio"
+              name="photo_source"
+              value="github"
+            />
+            <label for="github">Github</label>
+            <input
+              id="unsplash"
+              type="radio"
+              name="photo_source"
+              value="unsplash"
+            />
+            <label for="unsplash">Unsplash</label>
+            <input
+              id="flickr"
+              type="radio"
+              name="photo_source"
+              value="flickr"
+            />
+            <label for="flickr">Flickr</label>
+          </form>
+        </div>
+        <div class="tool_line">
+          <p class="tool_name photo_theme">Photo theme:</p>
+          <form class="tool_form">
+            <input id="theme" type="text" />
+          </form>
+        </div>
+        <div class="tool_line">
+          <p class="tool_name show_name">Show elements:</p>
+          <ul class="tool_form show_elements">
+            <li class="show_item">
+              <input id="player" type="checkbox" name="player" value="player" checked />
+              <label for="player">Player</label>
+            </li>
+            <li class="show_item">
+              <input id="todo" type="checkbox" name="todo" value="todo" checked />
+              <label for="todo">To do</label>
+            </li>
+            <li class="show_item">
+              <input
+                id="weather"
+                type="checkbox"
+                name="weather"
+                value="weather"
+                checked/>
+              <label for="weather">Weather</label>
+            </li>
+            <li class="show_item">
+              <input id="time" type="checkbox" name="time" value="time" checked/>
+              <label for="time">Time</label>
+            </li>
+            <li class="show_item">
+              <input id="date" type="checkbox" name="date" value="date" checked/>
+              <label for="date">Date</label>
+            </li>
+            <li class="show_item">
+              <input
+                id="greeting"
+                type="checkbox"
+                name="greeting"
+                value="greeting"
+                checked/>
+              <label for="greeting">Greeting</label>
+            </li>
+            <li class="show_item">
+              <input id="quote" type="checkbox" name="quote" value="quote" checked/>
+              <label for="quote">Quotes</label>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <img class="tool" src="./assets/svg/tool.svg" />
+      <a
+        class="github_link"
+        href="https://github.com/anastan588"
+        target="_blank"
+      >
+        <img class="github" src="./assets/svg/github.svg" />
+      </a>
+      <div class="rsschool">
+        <p class="year">2023</p>
+        <a
+          class="school_link"
+          href="https://rs.school/js-stage0/"
+          target="_blank"
+        >
+          <img class="school-img" src="./assets/svg/rs_school.svg" />
+        </a>
       </div>
     </footer>
+    <script src="js/tool.js" type="module"></script>
+    <script src="js/translate.js" type="module"></script>
     <script src="js/player.js"></script>
-    <script src="js/timeAndGreeting.js"></script>
-    <script src="js/sliderOfImages.js"></script>
-    <script src="js/weather.js"></script>
-    <script src="js/quote.js"></script>
+    <script src="js/timeAndGreeting.js" type="module"></script>
+    <script src="js/sliderOfImages.js" type="module"></script>
+    <script src="js/weather.js" type="module"></script>
+    <script src="js/quote.js" type="module"></script>
   </body>
 </html>
