@@ -7,9 +7,9 @@ import {
 } from "./translate.js";
 console.log(toolTranslateObjectEn, toolTranslateObjectRu);
 
-/*alert(
+alert(
   `Уважаемые проверяющие, очень прошу проверить в последний день проверки работу, т.к. она еще немного недоделана. Буду очень благодарна! Всем хорощих оценок)`
-);*/
+);
 
 const toolMenu = document.querySelector(".tool_container");
 const toolButton = document.querySelector(".tool");
