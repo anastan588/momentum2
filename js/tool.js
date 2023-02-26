@@ -37,7 +37,10 @@ function showToolMenu() {
   toolMenu.classList.toggle("tool_menu");
 }
 
+console.log(currentLanguage);
+
 function translateTool() {
+  //console.log(currentLanguage);
   getCurrentLanguage();
   console.log(currentLanguage);
   if (currentLanguage === "ru") {

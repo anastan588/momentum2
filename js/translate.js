@@ -4,7 +4,8 @@ export const languageForm = document.querySelector(".language_form");
 
 //console.log(languageForm);
 //console.log(languageForm.value);
-export let currentLanguage = "en";
+let currentLanguage = "en";
+console.log(currentLanguage);
 
 function languageChange() {
   if (enLanguage.checked) {
@@ -30,7 +31,7 @@ function getLocalStorage() {
     } else {
       enLanguage.checked = "true";
     }
-  }
+  } 
   return currentLanguage;
 }
 
@@ -39,7 +40,12 @@ languageForm.addEventListener("change", setLocalStorage);
 window.addEventListener("load", getLocalStorage);
 
 export function getCurrentLanguage() {
-  currentLanguage = localStorage.getItem("language");
+  if (localStorage.getItem("language")) {
+    currentLanguage = localStorage.getItem("language");
+  } else {
+    currentLanguage === "en";
+  }
+  
   setTimeout(getCurrentLanguage, 1000);
   //console.log(currentLanguage);
   return currentLanguage;
@@ -152,3 +158,5 @@ export let toolTranslateObjectRu = {
       ],
     },
   };
+
+export {currentLanguage};
