@@ -13,10 +13,10 @@ async function getQuotes() {
  console.log(currentLanguage);
   let quotes;
   if(currentLanguage === "en") {
-    quotes = '/js/quotesEng.json'; // js/quotesEng.json
+    quotes = './js/quotesEng.json'; // js/quotesEng.json
     console.log(quotes);
   } else if(currentLanguage === "ru") {
-    quotes = '/js/quotesRu.json'; // js/quotesRu.json
+    quotes = './js/quotesRu.json'; // js/quotesRu.json
     console.log(quotes);
   }
 

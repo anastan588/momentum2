@@ -352,7 +352,7 @@ body {
 }
 
 .quote-container {
-  padding-top: 100px;
+  padding-top: 2%;
   transition: all 1s ease;
 }
 
@@ -364,7 +364,7 @@ body {
   height: 10vh;
   min-height: 100px;
   padding: 20px;
-  padding-top: 120px;
+  padding-top: 2%;
   position: relative;
 }
 
