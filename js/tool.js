@@ -5,7 +5,7 @@ import {
   toolTranslateObjectRu,
   languageForm,
 } from "./translate.js";
-console.log(toolTranslateObjectEn, toolTranslateObjectRu);
+//console.log(toolTranslateObjectEn, toolTranslateObjectRu);
 
 alert(
   `Уважаемые проверяющие, очень прошу проверить в последний день проверки работу, т.к. она еще немного недоделана. Буду очень благодарна! Всем хорощих оценок)`
@@ -37,7 +37,10 @@ function showToolMenu() {
   toolMenu.classList.toggle("tool_menu");
 }
 
+console.log(currentLanguage);
+
 function translateTool() {
+  //console.log(currentLanguage);
   getCurrentLanguage();
   console.log(currentLanguage);
   if (currentLanguage === "ru") {

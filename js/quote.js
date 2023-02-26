@@ -1,5 +1,5 @@
 
-import {currentLanguage, getCurrentLanguage,languageForm} from "./translate.js";
+import {currentLanguage, getCurrentLanguage, languageForm} from "./translate.js";
 
 
 const quote = document.querySelector(".quote");
@@ -10,20 +10,26 @@ const changeQuote = document.querySelector(".change-quote");
 
 async function getQuotes() {
   getCurrentLanguage();
- // console.log(currentLanguage);
-  var quotes;
+ console.log(currentLanguage);
+  let quotes;
   if(currentLanguage === "en") {
-    quotes = "https://raw.githubusercontent.com/anastan588/momentum2/momentum/js/quotesEng.json"; // js/quotesEng.json
+    quotes = '/js/quotesEng.json'; // js/quotesEng.json
     console.log(quotes);
   } else if(currentLanguage === "ru") {
-    quotes = "https://raw.githubusercontent.com/anastan588/momentum2/momentum/js/quotesRu.json"; // js/quotesRu.json
+    quotes = '/js/quotesRu.json'; // js/quotesRu.json
     console.log(quotes);
   }
+
   const res = await fetch(quotes);
   const data = await res.json();
-  console.log(data);
+  // fetch(quotes)
+  //  .then(res => res.json())
+  //  .then(data => {
+  //    console.log(data);
+  //  })
+
  
-  let quoteNumber =Math.floor(Math.random()*data.length);
+  let quoteNumber = Math.floor(Math.random()*data.length);
   
   quote.textContent = data[quoteNumber].text;
   author.textContent = data[quoteNumber].author;
