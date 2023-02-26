@@ -15,7 +15,7 @@ function getPeriodOfDay() {
   let greetingTextArray = greetingText.split(" ");
   let periodOfdayAllString = greetingTextArray[1];
   //console.log(periodOfdayAllString);
-  let periodOfdayString = periodOfdayAllString.slice(0, [length - 1]);
+  let periodOfdayString = periodOfdayAllString.slice(0, (length - 1));
   if (currentLanguage === "en") {
     periodOfdays = periodOfdayString;
   } else if (currentLanguage === "ru") {
