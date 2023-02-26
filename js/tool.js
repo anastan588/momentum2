@@ -4,7 +4,7 @@ import {
   toolTranslateObjectEn,
   toolTranslateObjectRu,
   languageForm,
-} from "./translate.js";
+} from "./js/translate.js";
 console.log(toolTranslateObjectEn, toolTranslateObjectRu);
 
 alert(
