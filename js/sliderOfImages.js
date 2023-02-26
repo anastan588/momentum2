@@ -1,7 +1,7 @@
-import { greeting } from './timeAndGreeting.js';
-import { periodOfDaysEn } from './translate.js';
-import { periodOfDaysRu } from './translate.js';
-import { currentLanguage } from './timeAndGreeting.js';
+import { greeting } from "./js/timeAndGreeting.js";
+import { periodOfDaysEn } from "./js/translate.js";
+import { periodOfDaysRu } from "./js/translate.js";
+import { currentLanguage } from "./js/timeAndGreeting.js";
 //console.log(currentLanguage);
 //console.log(periodOfDaysRu);
 
@@ -11,22 +11,22 @@ const body = document.querySelector("body");
 let periodOfdays = "";
 
 function getPeriodOfDay() {
-let  greetingText = greeting.innerHTML;
-let greetingTextArray = greetingText.split(" ");
-let periodOfdayAllString = greetingTextArray[1];
-//console.log(periodOfdayAllString);
-let periodOfdayString = periodOfdayAllString.slice(0, length - 1);
+  let greetingText = greeting.innerHTML;
+  let greetingTextArray = greetingText.split(" ");
+  let periodOfdayAllString = greetingTextArray[1];
+  //console.log(periodOfdayAllString);
+  let periodOfdayString = periodOfdayAllString.slice(0, [length - 1]);
   if (currentLanguage === "en") {
-  periodOfdays = periodOfdayString;
-} else if (currentLanguage === "ru") {
-  for (let i=0; i<periodOfDaysRu.length; i++) {
-    if (periodOfdayString === periodOfDaysRu[i]) {
-      periodOfdays = periodOfDaysEn[i];
+    periodOfdays = periodOfdayString;
+  } else if (currentLanguage === "ru") {
+    for (let i = 0; i < periodOfDaysRu.length; i++) {
+      if (periodOfdayString === periodOfDaysRu[i]) {
+        periodOfdays = periodOfDaysEn[i];
+      }
     }
   }
-}
-//console.log(periodOfdays)
-return periodOfdays;
+  //console.log(periodOfdays)
+  return periodOfdays;
 }
 
 getPeriodOfDay();
@@ -34,10 +34,9 @@ getPeriodOfDay();
 //console.log(periodOfdays);
 
 let randomNumber = Math.round(Math.random() * 20);
-if (randomNumber === 0 ) {
-    randomNumber = 1;
+if (randomNumber === 0) {
+  randomNumber = 1;
 }
-
 
 function setBg() {
   const img = new Image();
@@ -48,10 +47,9 @@ function setBg() {
     randomNumberString = randomNumber;
   }
   img.src = `https://raw.githubusercontent.com/anastan588/momentum-images/main/images/${periodOfdays}/${randomNumberString}.webp`;
-  img.onload = () => {      
+  img.onload = () => {
     body.style.backgroundImage = `url("${img.src}")`;
-  }; 
-
+  };
 }
 
 function getSlideNext() {
@@ -68,9 +66,9 @@ function getSlideNext() {
     randomNumberString = randomNumber;
   }
   img.src = `https://raw.githubusercontent.com/anastan588/momentum-images/main/images/${periodOfdays}/${randomNumberString}.webp`;
-  img.onload = () => {      
+  img.onload = () => {
     body.style.backgroundImage = `url("${img.src}")`;
-  }; 
+  };
   return randomNumber;
 }
 
@@ -82,20 +80,18 @@ function getSlidePrev() {
     randomNumber = 20;
   }
   let randomNumberString = 0;
-  if (randomNumber >=1 && randomNumber < 10) {
+  if (randomNumber >= 1 && randomNumber < 10) {
     randomNumberString = `0${randomNumber}`;
   } else {
     randomNumberString = randomNumber;
   }
   img.src = `https://raw.githubusercontent.com/anastan588/momentum-images/main/images/${periodOfdays}/${randomNumberString}.webp`;
-  img.onload = () => {      
+  img.onload = () => {
     body.style.backgroundImage = `url("${img.src}")`;
-  }; 
+  };
   return randomNumber;
 }
 
 setBg();
 leftArrow.addEventListener("click", getSlidePrev);
 rightArrow.addEventListener("click", getSlideNext);
-
-
