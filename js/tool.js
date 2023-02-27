@@ -37,12 +37,12 @@ function showToolMenu() {
   toolMenu.classList.toggle("tool_menu");
 }
 
-console.log(currentLanguage);
+//console.log(currentLanguage);
 
 function translateTool() {
   //console.log(currentLanguage);
   getCurrentLanguage();
-  console.log(currentLanguage);
+  //console.log(currentLanguage);
   if (currentLanguage === "ru") {
     languageName.textContent = toolTranslateObjectRu.lang.language;
     photoSourseName.textContent = toolTranslateObjectRu.photo.photosourse;
@@ -77,7 +77,49 @@ toolButton.addEventListener("click", showToolMenu);
   }
 });*/
 
+function setCheckToLocalStorage() {
+  localStorage.setItem("playercheck", playerCheck.checked);
+  localStorage.setItem("weathercheck", weatherCheck.checked);
+  localStorage.setItem("timecheck", timeCheck.checked);
+  localStorage.setItem("datecheck", dateCheck.checked);
+  localStorage.setItem("greetingcheck", greetingCheck.checked);
+  localStorage.setItem("quotecheck", quoteCheck.checked);
+};
+
+function getCheckToLocalStorage() {
+  if (localStorage.getItem("playercheck")) {
+    //console.log(localStorage.getItem("playercheck"));
+    playerCheck.checked  = JSON.parse(localStorage.getItem("playercheck"));
+    //console.log(playerCheck.checked);
+  }
+  if (localStorage.getItem("weathercheck")) {
+    weatherCheck.checked  = JSON.parse(localStorage.getItem("weathercheck"))
+  }
+  if (localStorage.getItem("timecheck")) {
+    timeCheck.checked  = JSON.parse(localStorage.getItem("timecheck"))
+  }
+  if (localStorage.getItem("datecheck")) {
+    dateCheck.checked  = JSON.parse(localStorage.getItem("datecheck"))
+  }
+  if (localStorage.getItem("greetingcheck")) {
+    greetingCheck.checked  = JSON.parse(localStorage.getItem("greetingcheck"))
+  }
+  if (localStorage.getItem("quotecheck")) {
+    quoteCheck.checked  = JSON.parse(localStorage.getItem("quotecheck"))
+  }
+}
+
+//window.addEventListener("load", getCheckToLocalStorage);
+
+playerCheck.addEventListener("change", setCheckToLocalStorage);
+weatherCheck.addEventListener("change", setCheckToLocalStorage);
+timeCheck.addEventListener("change", setCheckToLocalStorage);
+dateCheck.addEventListener("change", setCheckToLocalStorage);
+greetingCheck.addEventListener("change", setCheckToLocalStorage);
+quoteCheck.addEventListener("change", setCheckToLocalStorage);
+
 function showOrHide() {
+  getCheckToLocalStorage();
   if (!playerCheck.checked) {
     playerBlock.style.opacity = "0";
   } else if (playerCheck.checked) {
@@ -108,11 +150,13 @@ function showOrHide() {
   } else if (quoteCheck.checked) {
     quoteBlock.style.opacity = "1";
   }
-}
+};
 
+showOrHide();
 playerCheck.addEventListener("change", showOrHide);
 weatherCheck.addEventListener("change", showOrHide);
 timeCheck.addEventListener("change", showOrHide);
 dateCheck.addEventListener("change", showOrHide);
 greetingCheck.addEventListener("change", showOrHide);
 quoteCheck.addEventListener("change", showOrHide);
+

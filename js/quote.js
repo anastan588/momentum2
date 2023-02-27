@@ -10,14 +10,14 @@ const changeQuote = document.querySelector(".change-quote");
 
 async function getQuotes() {
   getCurrentLanguage();
- console.log(currentLanguage);
+ //console.log(currentLanguage);
   let quotes;
   if(currentLanguage === "en") {
     quotes = './js/quotesEng.json'; // js/quotesEng.json
-    console.log(quotes);
+    //console.log(quotes);
   } else if(currentLanguage === "ru") {
     quotes = './js/quotesRu.json'; // js/quotesRu.json
-    console.log(quotes);
+    //console.log(quotes);
   }
 
   const res = await fetch(quotes);
