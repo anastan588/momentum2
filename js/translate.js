@@ -5,7 +5,7 @@ export const languageForm = document.querySelector(".language_form");
 //console.log(languageForm);
 //console.log(languageForm.value);
 let currentLanguage = "en";
-console.log(currentLanguage);
+//console.log(currentLanguage);
 
 function languageChange() {
   if (enLanguage.checked) {
