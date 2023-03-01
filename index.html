@@ -63,6 +63,17 @@
           </li>
         </ul>
       </div>
+      <div class="todo">
+        <div class="todo_enter">
+          <img class="todo_img" src="./assets/svg/todo.png" />
+          <input
+            id="todo"
+            class="todo_input"
+            type="text"
+            placeholder="New To Do"
+          />
+        </div>
+      </div>
       <div class="weather">
         <input type="text" class="city" />
         <i class="weather-icon owf"></i>
@@ -121,7 +132,6 @@
               type="radio"
               name="photo_source"
               value="unsplash"
-              
             />
             <label for="unsplash">Unsplash</label>
             <input
@@ -154,7 +164,7 @@
             </li>
             <li class="show_item">
               <input
-                id="todo"
+                id="todoTool"
                 type="checkbox"
                 name="todo"
                 value="todo"
@@ -241,5 +251,6 @@
     <script src="./js/sliderOfImages.js" type="module"></script>
     <script src="./js/weather.js" type="module"></script>
     <script src="./js/quote.js" type="module"></script>
+    <script src="./js/todo.js" type="module"></script>
   </body>
 </html>

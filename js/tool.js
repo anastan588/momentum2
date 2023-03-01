@@ -7,9 +7,9 @@ import {
 } from "./translate.js";
 //console.log(toolTranslateObjectEn, toolTranslateObjectRu);
 
-alert(
+/*alert(
   `Уважаемые проверяющие, очень прошу проверить работу в последний день проверки, т.к. она еще немного недоделана. Буду очень благодарна! Всем хороших оценок)`
-);
+);*/
 
 const toolMenu = document.querySelector(".tool_container");
 const toolButton = document.querySelector(".tool");
@@ -32,6 +32,9 @@ const greetingCheck = document.getElementById("greeting");
 const greetingBlock = document.querySelector(".greeting-container");
 const quoteCheck = document.getElementById("quote");
 const quoteBlock = document.querySelector(".quote-container");
+const todoCheck = document.getElementById("todoTool");
+const todoBlock = document.querySelector(".todo");
+//console.log(todoBlock);
 
 function showToolMenu() {
   toolMenu.classList.toggle("tool_menu");
@@ -84,28 +87,32 @@ function setCheckToLocalStorage() {
   localStorage.setItem("datecheck", dateCheck.checked);
   localStorage.setItem("greetingcheck", greetingCheck.checked);
   localStorage.setItem("quotecheck", quoteCheck.checked);
-};
+  localStorage.setItem("todocheck", todoCheck.checked);
+}
 
 function getCheckToLocalStorage() {
   if (localStorage.getItem("playercheck")) {
     //console.log(localStorage.getItem("playercheck"));
-    playerCheck.checked  = JSON.parse(localStorage.getItem("playercheck"));
+    playerCheck.checked = JSON.parse(localStorage.getItem("playercheck"));
     //console.log(playerCheck.checked);
   }
   if (localStorage.getItem("weathercheck")) {
-    weatherCheck.checked  = JSON.parse(localStorage.getItem("weathercheck"))
+    weatherCheck.checked = JSON.parse(localStorage.getItem("weathercheck"));
   }
   if (localStorage.getItem("timecheck")) {
-    timeCheck.checked  = JSON.parse(localStorage.getItem("timecheck"))
+    timeCheck.checked = JSON.parse(localStorage.getItem("timecheck"));
   }
   if (localStorage.getItem("datecheck")) {
-    dateCheck.checked  = JSON.parse(localStorage.getItem("datecheck"))
+    dateCheck.checked = JSON.parse(localStorage.getItem("datecheck"));
   }
   if (localStorage.getItem("greetingcheck")) {
-    greetingCheck.checked  = JSON.parse(localStorage.getItem("greetingcheck"))
+    greetingCheck.checked = JSON.parse(localStorage.getItem("greetingcheck"));
   }
   if (localStorage.getItem("quotecheck")) {
-    quoteCheck.checked  = JSON.parse(localStorage.getItem("quotecheck"))
+    quoteCheck.checked = JSON.parse(localStorage.getItem("quotecheck"));
+  }
+  if (localStorage.getItem("todocheck")) {
+    todoCheck.checked = JSON.parse(localStorage.getItem("todocheck"));
   }
 }
 
@@ -117,6 +124,7 @@ timeCheck.addEventListener("change", setCheckToLocalStorage);
 dateCheck.addEventListener("change", setCheckToLocalStorage);
 greetingCheck.addEventListener("change", setCheckToLocalStorage);
 quoteCheck.addEventListener("change", setCheckToLocalStorage);
+todoCheck.addEventListener("change", setCheckToLocalStorage);
 
 function showOrHide() {
   getCheckToLocalStorage();
@@ -150,7 +158,12 @@ function showOrHide() {
   } else if (quoteCheck.checked) {
     quoteBlock.style.opacity = "1";
   }
-};
+  if (!todoCheck.checked) {
+    todoBlock.style.opacity = "0";
+  } else if (todoCheck.checked) {
+    todoBlock.style.opacity = "1";
+  }
+}
 
 showOrHide();
 playerCheck.addEventListener("change", showOrHide);
@@ -159,4 +172,5 @@ timeCheck.addEventListener("change", showOrHide);
 dateCheck.addEventListener("change", showOrHide);
 greetingCheck.addEventListener("change", showOrHide);
 quoteCheck.addEventListener("change", showOrHide);
-
+todoCheck.addEventListener("change", showOrHide);
+//console.log(todoCheck);
