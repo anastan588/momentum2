@@ -210,6 +210,80 @@ body {
   background-image: url("../assets/svg/play-next.svg");
 }
 
+.todo {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  transition: all 1s ease;
+}
+.todo_enter {
+  display: flex;
+  gap: 15px;
+}
+.todo_img {
+  width: 30px;
+  height: 30px;
+}
+
+.todo_input {
+  padding: 10px;
+  font-size: 140%;
+  text-align: left;
+  color: #fff;
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+}
+
+.todo_input::placeholder {
+  color: #fff;
+  opacity: 0.6;
+}
+
+.todo_item_container {
+ display: flex;
+ flex-direction: column;
+ gap: 10px;
+}
+
+.todo-item {
+ display:flex;
+ gap: 15px;
+ font-size: 130%;
+ font-style: italic;
+ cursor: pointer;
+}
+.cross {
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+.cross:hover {
+  opacity: 1;
+}
+.cross:active {
+  transform: scale(1.5);
+}
+
+.button_clear {
+  font-size: 100%;
+  background-color: transparent;
+  border: solid 1px white;
+  border-radius: 6px;
+  padding: 7px 15px;
+  width: 120px;
+  cursor:pointer;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.button_clear:hover {
+  opacity: 1.0;
+}
+
+.button_clear:active {
+  transform: scale(1.1);
+}
+
 .weather {
   display: flex;
   flex-direction: column;

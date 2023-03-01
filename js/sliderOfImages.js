@@ -86,8 +86,8 @@ async function setBg() {
     //console.log(theme.value);
   }
   getCheckToLocalStorage();
-  console.log(unsplashCheck.checked);
-  console.log(githubCheck.checked);
+  //console.log(unsplashCheck.checked);
+  //console.log(githubCheck.checked);
   if (githubCheck.checked) {
     img.src = `https://raw.githubusercontent.com/anastan588/momentum-images/main/images/${periodOfdays}/${randomNumberString}.webp`;
   } else if (unsplashCheck.checked) {
@@ -101,7 +101,7 @@ async function setBg() {
     let data = await res.json();
     img.src = data.photos.photo[parseInt(randomNumber, 10)].url_l;
   }
-  console.log(img.src);
+  //console.log(img.src);
   img.onload = () => {
     body.style.backgroundImage = `url("${img.src}")`;
   };
