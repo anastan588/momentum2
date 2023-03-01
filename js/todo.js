@@ -1,4 +1,8 @@
-import {currentLanguage, getCurrentLanguage, languageForm} from "./translate.js";
+import {
+  currentLanguage,
+  getCurrentLanguage,
+  languageForm,
+} from "./translate.js";
 
 let todoInput = document.getElementById("todo");
 let todoContainer = document.querySelector(".todo");
@@ -6,12 +10,20 @@ console.log(currentLanguage);
 
 function setLanguageForInput() {
   getCurrentLanguage();
- if(currentLanguage === "ru") {
-  todoInput.placeholder = "Новая задача";
- } else if (currentLanguage === "en") {
-  todoInput.placeholder = "New To Do";
- }
-};
+  if (currentLanguage === "ru") {
+    todoInput.placeholder = "Новая задача";
+    console.log(todoContainer.children.length);
+    if (todoContainer.children.length>1) {
+      todoContainer.lastElementChild.textContent = "Очистить список";
+    }
+    
+  } else if (currentLanguage === "en") {
+    todoInput.placeholder = "New To Do";
+    if (todoContainer.children.length>1) {
+      todoContainer.lastElementChild.textContent = "Clear All";
+    }
+  }
+}
 
 setLanguageForInput();
 languageForm.addEventListener("change", setLanguageForInput);
@@ -52,8 +64,9 @@ function addNewToDo() {
   if (todoItemCollection.length <= 1) {
     let buttonClear = document.createElement("div");
     buttonClear.classList.add("button_clear");
-    if(currentLanguage === "ru") {buttonClear.textContent = "Очистить список";}
-    else if (currentLanguage === "en") {
+    if (currentLanguage === "ru") {
+      buttonClear.textContent = "Очистить список";
+    } else if (currentLanguage === "en") {
       buttonClear.textContent = "Clear All";
     }
     todoContainer.append(buttonClear);
@@ -94,7 +107,6 @@ function removeToDoList(event) {
       if (target === inputCollection[i] && inputCollection[i].checked) {
         labelCollection[i].style.textDecoration = "line-through";
         labelCollection[i].style.textDecorationColor = "black";
-        
       } else if (target === inputCollection[i] && !inputCollection[i].checked) {
         labelCollection[i].style.textDecoration = "none";
       }
