@@ -56,16 +56,16 @@ function getCheckToLocalStorage() {
     githubCheck.checked  = JSON.parse(localStorage.getItem("githubcheck"));
   }
   if (localStorage.getItem("unsplashcheck")) {
-    console.log(localStorage.getItem("unsplashcheck"));
+    //console.log(localStorage.getItem("unsplashcheck"));
     unsplashCheck.checked = JSON.parse(localStorage.getItem("unsplashcheck"));
-    console.log(unsplashCheck.checked);
+    //console.log(unsplashCheck.checked);
   }
   if (localStorage.getItem("flickrcheck")) {
     flickrCheck.checked  = JSON.parse(localStorage.getItem("flickrcheck"));
   }
 }
 
-//window.addEventListener("load", getCheckToLocalStorage);
+window.addEventListener("load", getCheckToLocalStorage);
 githubCheck.addEventListener("change", setCheckToLocalStorage);
 unsplashCheck.addEventListener("change",setCheckToLocalStorage);
 flickrCheck.addEventListener("change", setCheckToLocalStorage);

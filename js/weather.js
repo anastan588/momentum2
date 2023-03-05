@@ -15,6 +15,9 @@ city.value = "Minsk";
 
 async function getWeather() {
   getCurrentLanguage();
+  if (localStorage.getItem("city")) {
+    city.value = localStorage.getItem("city");
+  }
   //console.log(currentLanguage);
   //city.value = city.textContent;
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&lang=${currentLanguage}&appid=1b4d525db0575aeefbf01e04e6da29c1&units=metric`;
@@ -37,7 +40,7 @@ async function getWeather() {
       weatherHumidity.textContent = `Влажность: ${data.main.humidity}%`;
     }
   } else {
-    console.log(currentLanguage);
+    //console.log(currentLanguage);
     //weatherDescription.textContent = data.weather[0].description;
     if (currentLanguage === "en") {
       weatherDescription.textContent = "Error. Wrong name of town";
