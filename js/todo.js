@@ -6,13 +6,24 @@ import {
 
 let todoInput = document.getElementById("todo");
 let todoContainer = document.querySelector(".todo");
-console.log(currentLanguage);
+let headerContainer = document.querySelector(".header");
+//console.log(currentLanguage);
+
+/*function getToDoListFromMemory() {
+  getCurrentLanguage();
+  if (localStorage.getItem("todoList")) {
+    todoContainer.children = localStorage.getItem("todoList");
+    console.log(todoContainer.children);
+  }
+}*/
+
+//getToDoListFromMemory();
 
 function setLanguageForInput() {
   getCurrentLanguage();
   if (currentLanguage === "ru") {
     todoInput.placeholder = "Новая задача";
-    console.log(todoContainer.children.length);
+    //console.log(todoContainer.children.length);
     if (todoContainer.children.length>1) {
       todoContainer.lastElementChild.textContent = "Очистить список";
     }
@@ -28,12 +39,13 @@ function setLanguageForInput() {
 setLanguageForInput();
 languageForm.addEventListener("change", setLanguageForInput);
 
+
 function addNewToDo() {
   getCurrentLanguage();
-  console.log(currentLanguage);
+  //console.log(currentLanguage);
   let todoItemCollection = document.getElementsByName("todoItem");
-  console.log(todoItemCollection);
-  console.log(todoItemCollection.length);
+  //console.log(todoItemCollection);
+  //console.log(todoItemCollection.length);
   let divContainer = "";
   if (todoItemCollection.length < 1) {
     divContainer = document.createElement("div");
@@ -72,7 +84,9 @@ function addNewToDo() {
     todoContainer.append(buttonClear);
   }
   todoInput.value = "";
+  //localStorage.setItem("todoList", JSON.stringify(todoContainer));
 }
+
 
 todoInput.addEventListener("change", addNewToDo);
 
